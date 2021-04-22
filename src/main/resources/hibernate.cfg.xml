@@ -12,5 +12,9 @@
     <property name="show_sql">true</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
+    <mapping class="entity.Appeal"/>
+    <mapping class="entity.Conclusion"/>
+    <mapping class="entity.Doctors"/>
+    <mapping class="entity.Patients"/>
   </session-factory>
 </hibernate-configuration>
