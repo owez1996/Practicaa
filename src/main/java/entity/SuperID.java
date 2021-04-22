@@ -9,10 +9,6 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 @MappedSuperclass
 public class SuperID implements Serializable {
     @Id
