@@ -14,11 +14,11 @@ public class Conclusion extends SuperID {
     @Column(name = "Diagnosis")
     private String diagnosis;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_Doctor")
     private Doctors doctors;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_Appeal")
     private Appeal appeal;
 

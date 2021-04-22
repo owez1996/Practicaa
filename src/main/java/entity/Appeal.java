@@ -19,7 +19,7 @@ public class Appeal extends SuperID {
     @Column(name = "DateOfTheApplication")
     private String DateOfTheApplication;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_Patients")
     private Patients patients;
 
