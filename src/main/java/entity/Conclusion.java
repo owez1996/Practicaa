@@ -33,6 +33,7 @@ public class Conclusion extends SuperID {
                 '}';
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

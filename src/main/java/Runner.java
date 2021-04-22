@@ -14,7 +14,7 @@ public class Runner {
         try {
             session.beginTransaction();
 
-            Query query = session.createQuery("FROM Appeal ");
+            Query query = session.createQuery("FROM Conclusion ");
             roles = query.list();
 
             session.getTransaction().commit();
@@ -26,5 +26,6 @@ public class Runner {
             sessionFactory.close();
         }
         roles.forEach(System.out::println);
+
     }
 }
