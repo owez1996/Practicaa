@@ -1,6 +1,7 @@
 package runner.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,8 +24,10 @@ public class Appeal extends SuperID {
     @Column(name = "DateOfTheApplication")
     private String DateOfTheApplication;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_Patients")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Patients patients;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "appeal")

@@ -1,5 +1,6 @@
 package runner.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import javax.persistence.*;
 import java.util.Objects;
@@ -16,10 +17,12 @@ public class Conclusion extends SuperID {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_Doctor")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Doctors doctors;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_Appeal")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Appeal appeal;
 
     @Column(name = "Cost")

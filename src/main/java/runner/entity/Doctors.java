@@ -18,7 +18,7 @@ public class Doctors extends SuperID {
     @Column(name = "Specialty")
     private String specialty;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "doctors")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "doctors")
     private List<Conclusion> conclusions;
 
     @Override
