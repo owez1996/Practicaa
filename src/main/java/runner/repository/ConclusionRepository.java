@@ -1,6 +1,6 @@
-package repository;
+package runner.repository;
 
-import entity.Conclusion;
+import runner.entity.Conclusion;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

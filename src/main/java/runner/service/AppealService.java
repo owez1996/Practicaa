@@ -1,6 +1,6 @@
-package service;
+package runner.service;
 
-import entity.Appeal;
+import runner.entity.Appeal;
 
 public interface AppealService extends Service<Appeal> {
 }

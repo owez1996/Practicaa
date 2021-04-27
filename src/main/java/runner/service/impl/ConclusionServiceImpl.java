@@ -1,12 +1,13 @@
-package service.impl;
+package runner.service.impl;
 
-import entity.Conclusion;
+import org.springframework.stereotype.Service;
+import runner.entity.Conclusion;
 import org.springframework.beans.factory.annotation.Autowired;
-import repository.ConclusionRepository;
-import service.ConclusionService;
+import runner.repository.ConclusionRepository;
+import runner.service.ConclusionService;
 
 import java.util.List;
-
+@Service
 public class ConclusionServiceImpl implements ConclusionService {
 
     @Autowired

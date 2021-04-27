@@ -1,12 +1,13 @@
-package service.impl;
+package runner.service.impl;
 
-import entity.Patients;
+import org.springframework.stereotype.Service;
+import runner.entity.Patients;
 import org.springframework.beans.factory.annotation.Autowired;
-import repository.PatientsRepository;
-import service.PatientsService;
+import runner.repository.PatientsRepository;
+import runner.service.PatientsService;
 
 import java.util.List;
-
+@Service
 public class PatientsServiceImpl implements PatientsService {
     @Autowired
     private PatientsRepository patientsRepository;

@@ -1,6 +1,6 @@
-package service;
+package runner.service;
 
-import entity.Conclusion;
+import runner.entity.Conclusion;
 
 public interface ConclusionService extends Service<Conclusion> {
 }

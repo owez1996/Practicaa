@@ -1,6 +1,6 @@
-package service;
+package runner.service;
 
-import entity.Patients;
+import runner.entity.Patients;
 
 public interface PatientsService extends Service<Patients> {
 }

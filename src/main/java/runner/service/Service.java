@@ -1,8 +1,8 @@
-package service;
+package runner.service;
 
 import java.util.List;
 
-import entity.SuperID;
+import runner.entity.SuperID;
 
 
 public interface Service<T extends SuperID> {

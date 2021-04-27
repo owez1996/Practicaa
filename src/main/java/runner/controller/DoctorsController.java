@@ -1,13 +1,13 @@
-package controller;
+package runner.controller;
 
-import entity.Doctors;
+import runner.entity.Doctors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import service.DoctorsService;
+import runner.service.DoctorsService;
 
 import java.util.List;
 
@@ -20,31 +20,31 @@ public class DoctorsController {
 
     @GetMapping
     public ResponseEntity<List<Doctors>> get() {
-        List<Doctors> doctors = doctorsService.read();
-        if (doctors.isEmpty()) {
+        List<Doctors> entities = doctorsService.read();
+        if (entities.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(doctors, HttpStatus.OK);
+        return new ResponseEntity<>(entities, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Doctors> getById(@PathVariable int id) {
-        Doctors doctors = doctorsService.read(id);
-        if (doctors == null) {
+        Doctors entity = doctorsService.read(id);
+        if (entity == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(doctors, HttpStatus.OK);
+        return new ResponseEntity<>(entity, HttpStatus.OK);
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> put(@RequestBody Doctors doctors) {
-        doctorsService.save(doctors);
+    public ResponseEntity<String> put(@RequestBody Doctors entity) {
+        doctorsService.save(entity);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> post(@RequestBody Doctors doctors) {
-        doctorsService.save(doctors);
+    public ResponseEntity<String> post(@RequestBody Doctors entity) {
+        doctorsService.save(entity);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

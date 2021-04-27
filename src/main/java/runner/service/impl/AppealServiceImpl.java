@@ -1,10 +1,10 @@
-package service.impl;
+package runner.service.impl;
 
-import entity.Appeal;
+import runner.entity.Appeal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.AppealRepository;
-import service.AppealService;
+import runner.repository.AppealRepository;
+import runner.service.AppealService;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package repository;
+package runner.repository;
 
-import entity.Appeal;
+import runner.entity.Appeal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

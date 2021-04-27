@@ -1,13 +1,13 @@
-package controller;
+package runner.controller;
 
 
-import entity.Appeal;
+import runner.entity.Appeal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.AppealService;
+import runner.service.AppealService;
 
 import java.util.List;
 
@@ -20,35 +20,35 @@ public class AppealController {
 
     @GetMapping
     public ResponseEntity<List<Appeal>> get() {
-        List<Appeal> appeals = appealService.read();
-        if (appeals.isEmpty()) {
+        List<Appeal> entities = appealService.read();
+        if (entities.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(appeals, HttpStatus.OK);
+        return new ResponseEntity<>(entities, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Appeal> getById(@PathVariable int id) {
-        Appeal appeal = appealService.read(id);
-        if (appeal == null) {
+        Appeal entity = appealService.read(id);
+        if (entity == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(appeal, HttpStatus.OK);
+        return new ResponseEntity<>(entity, HttpStatus.OK);
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> put(@RequestBody Appeal appeal) {
-        appealService.save(appeal);
+    public ResponseEntity<String> put(@RequestBody Appeal entity) {
+        appealService.save(entity);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> post(@RequestBody Appeal appeal) {
-        appealService.save(appeal);
+    public ResponseEntity<String> post(@RequestBody Appeal entity) {
+        appealService.save(entity);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable int id) {
         appealService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);

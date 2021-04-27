@@ -1,4 +1,4 @@
-package entity;
+package runner.entity;
 
 import lombok.*;
 import javax.persistence.*;

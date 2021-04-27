@@ -1,6 +1,6 @@
-package repository;
+package runner.repository;
 
-import entity.Doctors;
+import runner.entity.Doctors;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
